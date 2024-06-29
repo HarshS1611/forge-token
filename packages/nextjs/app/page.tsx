@@ -138,7 +138,7 @@ const Home: NextPage = () => {
                 </div>
                 <div className="p-5">
                   <a
-                    href="https://testnet.rarible.com/token/polygon/0x8f40eC69C6841Df15c11618C10DE2F78F7Bd7fd9:0"
+                    href="https://testnet.rarible.com/token/polygon/0x765958E0c51506bE977c9c8fbf50cca61fDa16Dd:0"
                     target="blank"
                   >
                     <h5 className="flex items-center gap-2 mb-2 text-2xl w-60 font-bold tracking-tight text-gray-900 dark:text-white">
@@ -173,7 +173,7 @@ const Home: NextPage = () => {
                 </div>
                 <div className="p-5">
                   <a
-                    href="https://testnet.rarible.com/token/polygon/0x8f40eC69C6841Df15c11618C10DE2F78F7Bd7fd9:1"
+                    href="https://testnet.rarible.com/token/polygon/0x765958E0c51506bE977c9c8fbf50cca61fDa16Dd:1"
                     target="blank"
                   >
                     <h5 className="flex items-center gap-2 mb-2 text-2xl w-60 font-bold tracking-tight text-gray-900 dark:text-white">
@@ -208,7 +208,7 @@ const Home: NextPage = () => {
                 </div>
                 <div className="p-5">
                   <a
-                    href="https://testnet.rarible.com/token/polygon/0x8f40eC69C6841Df15c11618C10DE2F78F7Bd7fd9:2"
+                    href="https://testnet.rarible.com/token/polygon/0x765958E0c51506bE977c9c8fbf50cca61fDa16Dd:2"
                     target="blank"
                   >
                     <h5 className="flex items-center gap-2 mb-2 text-2xl w-60 font-bold tracking-tight text-gray-900 dark:text-white">
@@ -243,7 +243,7 @@ const Home: NextPage = () => {
                 </div>
                 <div className="p-5">
                   <a
-                    href="https://testnet.rarible.com/token/polygon/0x8f40eC69C6841Df15c11618C10DE2F78F7Bd7fd9:3"
+                    href="https://testnet.rarible.com/token/polygon/0x765958E0c51506bE977c9c8fbf50cca61fDa16Dd:3"
                     target="blank"
                   >
                     <h5 className="flex items-center gap-2 mb-2 text-2xl w-60 font-bold tracking-tight text-gray-900 dark:text-white">
@@ -257,7 +257,7 @@ const Home: NextPage = () => {
 
                   {loading4 ? (
                     <button className="p-2 bg-blue-700 rounded-lg text-white" disabled>
-                      Forging...
+                      Minting...
                     </button>
                   ) : (
                     <button
@@ -267,7 +267,7 @@ const Home: NextPage = () => {
                       }}
                       className=" p-2 bg-blue-700 rounded-lg text-white"
                     >
-                      Forge Token
+                      Mint Token
                     </button>
                   )}
                 </div>
@@ -279,7 +279,7 @@ const Home: NextPage = () => {
                 </div>
                 <div className="p-5">
                   <a
-                    href="https://testnet.rarible.com/token/polygon/0x8f40eC69C6841Df15c11618C10DE2F78F7Bd7fd9:4"
+                    href="https://testnet.rarible.com/token/polygon/0x765958E0c51506bE977c9c8fbf50cca61fDa16Dd:4"
                     target="blank"
                   >
                     <h5 className="flex items-center gap-2 mb-2 text-2xl  font-bold tracking-tight text-gray-900 dark:text-white">
@@ -292,7 +292,7 @@ const Home: NextPage = () => {
 
                   {loading5 ? (
                     <button className="p-2 bg-blue-700 rounded-lg text-white" disabled>
-                      Forging...
+                      Minting...
                     </button>
                   ) : (
                     <button
@@ -302,7 +302,7 @@ const Home: NextPage = () => {
                       }}
                       className=" p-2 bg-blue-700 rounded-lg text-white"
                     >
-                      Forge Token
+                      Mint Token
                     </button>
                   )}
                 </div>
@@ -314,7 +314,7 @@ const Home: NextPage = () => {
                 </div>
                 <div className="p-5">
                   <a
-                    href="https://testnet.rarible.com/token/polygon/0x8f40eC69C6841Df15c11618C10DE2F78F7Bd7fd9:5"
+                    href="https://testnet.rarible.com/token/polygon/0x765958E0c51506bE977c9c8fbf50cca61fDa16Dd:5"
                     target="blank"
                   >
                     <h5 className="flex items-center gap-2 mb-2 text-2xl w-80 font-bold tracking-tight text-gray-900 dark:text-white">
@@ -327,7 +327,7 @@ const Home: NextPage = () => {
 
                   {loading6 ? (
                     <button className="p-2 bg-blue-700 rounded-lg text-white" disabled>
-                      Forging...
+                      Minting...
                     </button>
                   ) : (
                     <button
@@ -337,7 +337,7 @@ const Home: NextPage = () => {
                       }}
                       className=" p-2 bg-blue-700 rounded-lg text-white"
                     >
-                      Forge Token
+                      Mint Token
                     </button>
                   )}
                 </div>
@@ -349,7 +349,7 @@ const Home: NextPage = () => {
                 </div>
                 <div className="p-5">
                   <a
-                    href="https://testnet.rarible.com/token/polygon/0x8f40eC69C6841Df15c11618C10DE2F78F7Bd7fd9:6"
+                    href="https://testnet.rarible.com/token/polygon/0x765958E0c51506bE977c9c8fbf50cca61fDa16Dd:6"
                     target="blank"
                   >
                     <h5 className="flex items-center gap-2 mb-2 text-2xl w-60 font-bold tracking-tight text-gray-900 dark:text-white">
@@ -363,7 +363,7 @@ const Home: NextPage = () => {
 
                   {loading7 ? (
                     <button className="p-2 bg-blue-700 rounded-lg text-white" disabled>
-                      Forging...
+                      Minting...
                     </button>
                   ) : (
                     <button
@@ -373,7 +373,7 @@ const Home: NextPage = () => {
                       }}
                       className=" p-2 bg-blue-700 rounded-lg text-white"
                     >
-                      Forge Token
+                      Mint Token
                     </button>
                   )}
                 </div>
