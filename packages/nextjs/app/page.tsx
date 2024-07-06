@@ -26,22 +26,37 @@ const Home: NextPage = () => {
   const [loading7, setLoading7] = useState(false);
 
   const MintToken = async (index: number) => {
+    const fetchGasPrice = await fetch("https://gasstation.polygon.technology/amoy").then(res => res.json());
+    console.log(fetchGasPrice.standard.maxFee);
+    const gasPriceWei = ethers.parseUnits(fetchGasPrice.standard.maxFee.toFixed(10), "gwei");
     setFTxHash("");
     try {
       const signer = await provider.getSigner();
+      const address = await signer.getAddress();
 
       const contract = new ethers.Contract(
         deployedContracts[selectedNetwork].ForgeToken.address,
         deployedContracts[selectedNetwork].ForgeToken.abi,
         signer,
       );
-      const tx = await contract.freeMint(index);
-      await tx.wait();
-      console.log(tx);
+      const data = contract.interface.encodeFunctionData("freeMint", [index]);
+      const gasLimit = await provider.estimateGas({
+        to: contract.target,
+        data: data,
+        from: address,
+      });
+      const txResponse = await contract.freeMint(index, {
+        gasLimit: (gasLimit * BigInt(120)) / BigInt(100),
+        gasPrice: gasPriceWei,
+      });
+
+      await txResponse.wait();
+      console.log("Transaction sent:", txResponse.hash);
       setLoading1(false);
       setLoading2(false);
       setLoading3(false);
-      setTxHash(tx.hash);
+
+      setTxHash(txResponse.hash);
       alert("Token minted successfully");
     } catch (e) {
       console.log(e);
@@ -53,16 +68,29 @@ const Home: NextPage = () => {
     }
   };
   const ForgeToken = async (index: number) => {
+    const fetchGasPrice = await fetch("https://gasstation.polygon.technology/amoy").then(res => res.json());
+    console.log(fetchGasPrice.standard.maxFee);
+    const gasPriceWei = ethers.parseUnits(fetchGasPrice.standard.maxFee.toFixed(9), "gwei");
     setTxHash("");
     try {
       const signer = await provider.getSigner();
+      const address = await signer.getAddress();
 
       const contract = new ethers.Contract(
         deployedContracts[selectedNetwork].ForgeToken.address,
         deployedContracts[selectedNetwork].ForgeToken.abi,
         signer,
       );
-      const tx = await contract.ForgeTokenById(index);
+      const data = contract.interface.encodeFunctionData("ForgeTokenById", [index]);
+      const gasLimit = await provider.estimateGas({
+        to: contract.address,
+        data: data,
+        from: address,
+      });
+      const tx = await contract.ForgeTokenById(index, {
+        gasLimit: (gasLimit * BigInt(120)) / BigInt(100),
+        gasPrice: gasPriceWei,
+      });
       await tx.wait();
       console.log(tx);
       setFTxHash(tx.hash);

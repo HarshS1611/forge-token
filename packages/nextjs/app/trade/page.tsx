@@ -31,16 +31,31 @@ const Home: NextPage = () => {
   const TradeToken = async () => {
     if (recieveId >= 0 && tradeId >= 0 && tradeId !== recieveId) {
       setLoading(true);
-
+      const fetchGasPrice = await fetch("https://gasstation.polygon.technology/amoy").then(res => res.json());
+      console.log(fetchGasPrice.standard.maxFee);
+      const gasPriceWei = ethers.parseUnits(fetchGasPrice.standard.maxFee.toFixed(10), "gwei");
       try {
         const signer = await provider.getSigner();
+        const address = await signer.getAddress();
 
         const contract = new ethers.Contract(
           deployedContracts[selectedNetwork].ForgeToken.address,
           deployedContracts[selectedNetwork].ForgeToken.abi,
           signer,
         );
-        const tx = await contract.tradeToken(tradeId, recieveId);
+        console.log(contract);
+        const data = contract.interface.encodeFunctionData("tradeToken", [tradeId, recieveId]);
+        console.log(data);
+        const gasLimit = await provider.estimateGas({
+          to: contract.target,
+          data: data,
+          from: address,
+        });
+        console.log(gasLimit);
+        const tx = await contract.tradeToken(tradeId, recieveId, {
+          gasPrice: gasPriceWei,
+          gasLimit: gasLimit,
+        });
         await tx.wait();
         setLoading(false);
         console.log(tx);
