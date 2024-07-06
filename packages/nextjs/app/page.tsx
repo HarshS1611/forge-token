@@ -83,7 +83,7 @@ const Home: NextPage = () => {
       );
       const data = contract.interface.encodeFunctionData("ForgeTokenById", [index]);
       const gasLimit = await provider.estimateGas({
-        to: contract.address,
+        to: contract.target,
         data: data,
         from: address,
       });
